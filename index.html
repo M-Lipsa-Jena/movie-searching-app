@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+     <!-- <div id="video-container">
+        <video autoplay loop muted id="video-bg">
+            
+             <source src="https://media.istockphoto.com/id/1268117869/video/4k-highly-detailed-particle-stream-loop.mp4?s=mp4-640x640-is&k=20&c=rZwACJUF8N8VQTrSHDWoauM4lZJYP1GmT2AaoY7V1Vg=" type="video/mp4">         
+
+        </video>
+    </div> -->
+
+
+    <div id="MovieContainer">
+      <div id="movieinfo">
+        <h1 id="head">Search your movie title here....</h1>
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Enter Movie name" />
+          <button type="submit" id="search_btn">Search</button>
+        </div> 
+      </div>
+      
+          <p id="error" class="msg" style="color: red"></p>
+
+      <div id="MovieDetails">
+        <div id="poster"><img src="..." alt="Movie Poster" /></div>
+        <div id="details">
+          <h2 id="Title"></h2>
+          <h3 id="imdbRating"></h3>
+          <h3>Genre:</h3>
+          <div id="genre"></div>
+        </div>
+      </div>
+
+      <div class="movie-other-details">
+        <h3 id="Released"></h3>
+          <h3 id="Type"></h3>
+          <h3 id="actors"></h3>
+          <h3 id="director"></h3>
+          <h3 id="Runtime"></h3>
+          <h3 id="BoxOffice"></h3>
+          <h3 id="Awards"></h3>
+          <h3 id="Country"></h3>
+          <h3 id="Language"></h3>
+          
+          <!-- <h3 id="Writer"></h3> -->
+          <p id="plot"></p>
+      </div>
+    </div>
+
+    <script src="./Movie.js"></script>
+  </body>
+</html>
