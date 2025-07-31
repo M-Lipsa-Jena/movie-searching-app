@@ -1,10 +1,11 @@
 [build]
   functions = "netlify/functions"
-  command = "npm install"
   publish = "."
 
 [dev]
-  autoLaunch = true
+  command = "npm run start"
+  port = 8888
+  targetPort = 5173
 
 [[redirects]]
   from = "/api/*"
