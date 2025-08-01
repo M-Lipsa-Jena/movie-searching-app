@@ -298,7 +298,7 @@ body {
   }
 }
 
-@media screen and (max-width: 430px) and (min-width: 344px) {
+@media screen and (max-width: 431px) and (min-width: 344px) {
   #MovieContainer {
     width: 100%;
     height: auto;
