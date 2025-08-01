@@ -185,7 +185,7 @@ body {
     padding: 20px;
   }
   .movieinfo{
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
   .search-container {
