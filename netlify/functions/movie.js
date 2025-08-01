@@ -1,21 +1,15 @@
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = require('node-fetch');
 
 exports.handler = async function(event, context) {
-  const { title } = event.queryStringParameters;
+  const title = event.queryStringParameters.title;
   const apiKey = process.env.OMDB_API_KEY;
 
-  if (!title) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: "Missing movie title" }),
-    };
-  }
-
-  const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(title)}`;
+  const url = `https://www.omdbapi.com/?t=${title}&apikey=${apiKey}`;
 
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(url);
     const data = await response.json();
+
     return {
       statusCode: 200,
       body: JSON.stringify(data),
@@ -23,7 +17,7 @@ exports.handler = async function(event, context) {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Failed to fetch movie data" }),
+      body: JSON.stringify({ error: error.message }),
     };
   }
 };
