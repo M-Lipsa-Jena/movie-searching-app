@@ -49,24 +49,20 @@ body {
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-
 #movieinfo {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
 }
-
 #head {
   font-size: 20px;
   margin-bottom: 10px;
 }
-
 .search-container {
   display: flex;
   gap: 10px;
   align-items: center;
 }
-
 .search-container input {
   flex: 1;
   padding: 10px 20px;
@@ -76,12 +72,10 @@ body {
   color: #fff;
   font-size: 14px;
 }
-
 .search-container input:hover {
   outline: none;
   border-color: #fff;
 }
-
 .search-container button {
   padding: 10px 20px;
   border-radius: 20px;
@@ -95,27 +89,23 @@ body {
 .search-container button:hover {
   background-color: #e0a800;
 }
-
 #error {
   color: red;
   font-weight: bold;
   margin-top: 10px;
   text-align: center;
 }
-
 #MovieDetails {
   display: flex;
   gap: 30px;
   margin-bottom: 30px;
 }
-
 #poster img {
   width: 200px;
   height: 200px;
   border-radius: 8px;
   object-fit: cover;
 }
-
 #details {
   flex: 1;
   display: flex;
@@ -126,41 +116,35 @@ body {
   text-align: center;
   gap: 10px;
 }
-
 #Title {
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 #imdbRating {
   display: flex;
   align-items: center;
   font-size: 18px;
   margin-bottom: 10px;
 }
-
 #imdbRating::before {
   content: "⭐";
   margin-right: 6px;
   font-size: 18px;
   color: gold;
 }
-
 #genre {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   /* margin-bottom: 20px; */
 }
-
 #genre div {
   border: 1px solid #ccc;
   padding: 5px 14px;
   border-radius: 6px;
   font-size: 14px;
 }
-
 #MovieDetails h3
  {
   font-weight: 500;
@@ -184,7 +168,6 @@ body {
   line-height: 1;
   color: #ddd;
 }
-
 #plot::before {
   content: "Plot:";
   display: block;
@@ -194,23 +177,124 @@ body {
   color: #fff;
 }
 
-@media screen and (max-width: 768px) {
+/** === Media Queries === */
+
+@media screen and (max-width: 430px) and (min-width: 344px) {
+  #MovieContainer {
+    width: 100%;
+    padding: 20px;
+  }
+  .search-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .search-container input,
+  .search-container button {
+    width: 100%;
+  }
   #MovieDetails {
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
   }
-
   #poster img {
     width: 100%;
-    max-width: 240px;
+    height: auto;
   }
-
-  #details {
-    width: 100%;
-    text-align: center;
+  #Title {
+    font-size: 20px;
   }
-
-  #genre {
-    justify-content: center;
+  #plot {
+    font-size: 13px;
+    padding: 12px;
+  }
+  #genre div {
+    font-size: 12px;
+    padding: 4px 10px;
   }
 }
+@media screen and (max-width: 768px) {
+  #MovieContainer {
+    width: 100%;
+    padding: 25px 15px;
+  }
+  #MovieDetails {
+    gap: 20px;
+  }
+  #poster img {
+    width: 80%;
+    height: auto;
+  }
+  #Title {
+    font-size: 22px;
+  }
+  #plot {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 912px) {
+  #MovieContainer {
+    width: 95%;
+  }
+  #poster img {
+    max-width: 180px;
+    height: auto;
+  }
+  #Title {
+    font-size: 24px;
+  }
+  #plot {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #MovieContainer {
+    width: 92%;
+    padding: 25px;
+  }
+  #MovieDetails {
+    gap: 25px;
+  }
+  #poster img {
+    max-width: 200px;
+    height: auto;
+  }
+  #Title {
+    font-size: 25px;
+  }
+  #plot {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  #genre div {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  #MovieContainer {
+    width: 90%;
+  }
+  #plot {
+    font-size: 15px;
+  }
+  #Title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1281px) {
+  #MovieContainer {
+    max-width: 1000px;
+  }
+  #poster img {
+    width: 220px;
+    height: auto;
+  }
+  #Title {
+    font-size: 28px;
+  }
+  #plot {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+}
+
