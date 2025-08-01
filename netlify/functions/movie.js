@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 exports.handler = async function(event, context) {
   const { title } = event.queryStringParameters;
@@ -12,6 +12,7 @@ exports.handler = async function(event, context) {
   }
 
   const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(title)}`;
+
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
